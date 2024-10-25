@@ -3,203 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт з картками та боковою колонкою</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Стилі для шапки */
-        header {
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        /* Стилі для контейнера */
-        .wrapper {
-            display: flex;
-        }
-
-        /* Ліва прихована колонка */
-        .sidebar {
-            background-color: #333;
-            color: #fff;
-            width: 250px;
-            padding: 20px;
-            position: fixed;
-            left: -250px; /* схована за замовчуванням */
-            top: 0;
-            height: 100%;
-            transition: left 0.3s ease;
-            overflow-y: auto;
-            z-index: 1000;
-        }
-
-        .sidebar a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            padding: 10px 0;
-        }
-
-        .sidebar a:hover {
-            background-color: #444;
-        }
-
-        /* Кнопка для відкриття/закриття бокової колонки */
-        .toggle-btn {
-            position: fixed;
-            top: 15px;
-            left: 15px;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            z-index: 1001;
-        }
-
-        .sidebar-active {
-            left: 0;
-        }
-
-        /* Контент для карток */
-        .content {
-            margin: 80px 20px 60px; /* для відступів від шапки та футера */
-            flex-grow: 1;
-            padding-left: 20px;
-            padding-top: 30px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 300px;
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .card-text {
-            font-size: 1em;
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .card-btn {
-            display: inline-block;
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .card-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Стилі для футера */
-        footer {
-            background-color: #333;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Ваш надійний партнер у сфері систем безпеки</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Шапка -->
+    <!-- Верхнє меню навігації -->
     <header>
-        <h1>Вітаємо на нашому сайті</h1>
+        <nav class="navbar">
+            <div class="logo">ЛОГОТИП</div>
+            <ul class="nav-links">
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#services">Послуги</a></li>
+                <li><a href="#portfolio">Портфоліо</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Кнопка для бокової колонки -->
-    <button class="toggle-btn" onclick="toggleSidebar()">Меню</button>
+    <!-- Головний банер -->
+    <section id="home" class="banner">
+        <h1>Ваш надійний партнер у сфері систем безпеки</h1>
+        <p>Надійні рішення для вашої безпеки</p>
+        <a href="#about" class="btn">Дізнатися більше</a>
+    </section>
 
-    <!-- Ліва колонка навігації -->
-    <div class="sidebar" id="sidebar">
-        <a href="#link1">Посилання 1</a>
-        <a href="#link2">Посилання 2</a>
-        <a href="#link3">Посилання 3</a>
-        <a href="#link4">Посилання 4</a>
-    </div>
-
-    <!-- Контент сторінки -->
-    <div class="wrapper">
+    <!-- Розділ "Про нас" -->
+    <section id="about" class="about">
         <div class="content">
+            <h2>Про нас</h2>
+            <p>Ми займаємося проєктуванням, монтажем та обслуговуванням систем безпеки вже понад 10 років. Наша місія - забезпечити безпеку і комфорт наших клієнтів.</p>
+            <img src="about-image.jpg" alt="Про нас">
+        </div>
+    </section>
+
+    <!-- Розділ "Наші послуги" -->
+    <section id="services" class="services">
+        <h2>Наші послуги</h2>
+        <div class="service-cards">
             <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Зображення 1">
-                <div class="card-body">
-                    <h3 class="card-title">Заголовок 1</h3>
-                    <p class="card-text">Короткий опис контенту на цій картці.</p>
-                    <a href="#link1" class="card-btn">Детальніше</a>
-                </div>
+                <img src="icon1.png" alt="Відеонагляд">
+                <h3>Монтаж систем відеонагляду</h3>
+                <p>Надійне обладнання для спостереження за вашою територією.</p>
+                <a href="#" class="btn">Детальніше</a>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Зображення 2">
-                <div class="card-body">
-                    <h3 class="card-title">Заголовок 2</h3>
-                    <p class="card-text">Інший опис контенту на цій картці.</p>
-                    <a href="#link2" class="card-btn">Детальніше</a>
-                </div>
+                <img src="icon2.png" alt="Пожежна сигналізація">
+                <h3>Монтаж пожежної сигналізації</h3>
+                <p>Встановлення сучасних систем раннього виявлення пожежі.</p>
+                <a href="#" class="btn">Детальніше</a>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/300x200" alt="Зображення 3">
-                <div class="card-body">
-                    <h3 class="card-title">Заголовок 3</h3>
-                    <p class="card-text">Додаткова інформація на картці.</p>
-                    <a href="#link3" class="card-btn">Детальніше</a>
-                </div>
+                <img src="icon3.png" alt="Проєктування">
+                <h3>Проєктування і консультації</h3>
+                <p>Індивідуальні рішення для кожного об'єкта.</p>
+                <a href="#" class="btn">Детальніше</a>
+            </div>
+            <div class="card">
+                <img src="icon4.png" alt="Обслуговування">
+                <h3>Обслуговування та ремонт</h3>
+                <p>Професійне обслуговування і ремонт техніки.</p>
+                <a href="#" class="btn">Детальніше</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Футер -->
+    <!-- Розділ "Портфоліо" -->
+    <section id="portfolio" class="portfolio">
+        <h2>Портфоліо</h2>
+        <div class="gallery">
+            <img src="work1.jpg" alt="Проєкт 1">
+            <img src="work2.jpg" alt="Проєкт 2">
+            <img src="work3.jpg" alt="Проєкт 3">
+        </div>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Чудова робота! Дуже задоволений результатом."</p>
+                <h4>Ім'я клієнта</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Швидко та якісно! Рекомендую."</p>
+                <h4>Ім'я клієнта</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Розділ "Наші переваги" -->
+    <section class="advantages">
+        <h2>Наші переваги</h2>
+        <div class="icons">
+            <div class="icon">
+                <img src="icon-speed.png" alt="Швидкість">
+                <p>Швидкість виконання робіт</p>
+            </div>
+            <div class="icon">
+                <img src="icon-quality.png" alt="Якість">
+                <p>Висока якість матеріалів</p>
+            </div>
+            <div class="icon">
+                <img src="icon-professional.png" alt="Професіоналізм">
+                <p>Професійний персонал</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Розділ "Команда" -->
+    <section class="team">
+        <h2>Наша команда</h2>
+        <div class="team-members">
+            <div class="member">
+                <img src="team1.jpg" alt="Спеціаліст 1">
+                <h4>Ім'я Спеціаліста</h4>
+                <p>Інженер</p>
+            </div>
+            <div class="member">
+                <img src="team2.jpg" alt="Спеціаліст 2">
+                <h4>Ім'я Спеціаліста</h4>
+                <p>Проєктувальник</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Розділ "Контакти" -->
+    <section id="contacts" class="contacts">
+        <h2>Контакти</h2>
+        <form>
+            <input type="text" placeholder="Ваше ім'я">
+            <input type="email" placeholder="Ваш email">
+            <textarea placeholder="Ваше повідомлення"></textarea>
+            <button type="submit" class="btn">Відправити</button>
+        </form>
+        <div class="contact-info">
+            <p>Телефон: +380 123 456 789</p>
+            <p>Email: info@company.com</p>
+            <p>Адреса: вул. Прикладна, 123, Київ</p>
+        </div>
+    </section>
+
+    <!-- Нижнє меню (футер) -->
     <footer>
-        &copy; 2024 Всі права захищені.
+        <div class="footer-links">
+            <a href="#home">Головна</a>
+            <a href="#about">Про нас</a>
+            <a href="#services">Послуги</a>
+            <a href="about.html">Портфоліо</a>
+            <a href="#contacts">Контакти</a>
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p>Політика конфіденційності | Умови використання</p>
     </footer>
-
-    <!-- JavaScript для відкриття/закриття бокової колонки -->
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("sidebar-active");
-        }
-    </script>
 </body>
 </html>
